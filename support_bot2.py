@@ -42,7 +42,7 @@ async def set_age(message):
 @dp.message_handler(state=UserState.age)
 async def set_growth(message, state):
     try:
-        if int(message.text) < 13:
+        if int(message.text) < 13 or int(message.text) > 80:
             raise ValueError()
     except ValueError:
         await message.answer('Ошибка! Формула применима для лиц в возрасте от 13 до 80 лет.\nВведите свой возраст:')
